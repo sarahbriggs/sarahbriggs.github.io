@@ -26,6 +26,9 @@
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations', { method : 'GET'})
           .then(response => {
             let json = Array.from(response)
+            console.log('here')
+            console.log(response)
+            console.log(json)
             json.forEach((element) => {
               console.log(element)
               console.log(JSON.parse(element))
