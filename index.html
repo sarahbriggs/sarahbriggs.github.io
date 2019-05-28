@@ -19,27 +19,17 @@
         this.getRepoData()
       },
       data: {
-        repoContents: ''
+        repoContents: null
       },
       methods: {
         getRepoData: function() {
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
           .then(response => 
             response.json()
-            /***
-            let json = Array.from(response)
-            console.log('here')
-            console.log(response.body)
-            console.log(json)
-            json.forEach((element) => {
-              console.log(element)
-              console.log(JSON.parse(element))
-              this.repoContents += (JSON.parse(element))
-            })
-            ***/
           )
           .then(data => {
-            console.log(data)
+            this.repoContents = data
+            console.log(this.repoContents)
           })
           .catch(error => console.error(error))
         }
