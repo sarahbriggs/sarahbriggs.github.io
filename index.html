@@ -27,6 +27,7 @@
           .then(response => {
             let json = Array.from(response)
             json.forEach((element) => {
+              console.log(element)
               console.log(JSON.parse(element))
               this.repoContents += (JSON.parse(element))
             })
