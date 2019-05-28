@@ -1,4 +1,21 @@
-
-<div class="slideshow-container">
-
+<div id="app">
+  {{ repoContents }}
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+  let app = new Vue({
+    el: '#app',
+    data: {
+      repoContents: null
+    },
+    methods: {
+      getData: function() {
+        fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents', { method : 'GET'})
+        .then((response) => {
+          console.log(response.json())
+          this.repoContents = response.json()
+        })
+      }
+    }
+  })
+</script>
