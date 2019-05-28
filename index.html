@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <p>Check up to date againnnnnn 5</p>
+  <p>Check up to date againnnnnn 6</p>
   <div id="app">
     {{ repoContents }}
   </div>
@@ -25,10 +25,8 @@
         getRepoData: function() {
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations', { method : 'GET'})
           .then(response => {
-            response.forEach((element) => {
-              this.repoContents.push(JSON.stringify(element))
-            })
-            console.log(this.repoContents)
+            let json = Array.from(response)
+            console.log(json) 
           })
           .catch(error => console.error(error))
         }
