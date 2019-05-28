@@ -25,6 +25,7 @@
         getRepoData: function() {
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations', { method : 'GET'})
           .then(response => {
+             console.log(response.data)
              response.json()
           })
           .then(data => {
