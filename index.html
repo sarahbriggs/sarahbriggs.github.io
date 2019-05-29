@@ -53,16 +53,15 @@
           let source = ''
           let request = new XMLHttpRequest()
           request.open('GET', fileURL, true);
-          request.responseType = 'blob'
-          request.onload = function() {
-            console.log(request.response)
+          request.send()
+          request.onreadystatechange = function() {
+            console.log(request.responseText)
             // let reader = new FileReader()
             // reader.readAsDataURL(request.response)
             // reader.onload =  function(e) {
             //   console.log('DataURL:', e.target.result)
             // }
           }
-          request.send()
 
           sessionStorage.setItem("presentation", fileURL)
           let slideshow = remark.create({
