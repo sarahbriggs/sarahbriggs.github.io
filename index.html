@@ -27,7 +27,8 @@
           )
           .then(data => {
             data.forEach(element => {
-              if(element.slice(-3) == '.md') {
+              console.log(element)
+              if(element['name'].slice(-3) == '.md') {
                 this.markdownURLs.push([element['name'], element['url']])
               } 
             })
