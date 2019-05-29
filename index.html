@@ -4,20 +4,24 @@
 <head>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div id="app">
-    <h3>Select Presentation</h3>
-    <ul>
-      <li v-for="md in markdownURLs">
-        <a v-on:click="parseMarkdown(md[1])">{{ md[0] }}</a>
-      </li>
-    </ul>
-  </div>
+    <div class="selector" visibility="{{ selectorVis }}">
+      <h3>Select Presentation</h3>
+      <ul>
+        <li v-for="md in markdownURLs">
+          <a v-on:click="parseMarkdown(md[1])">{{ md[0] }}</a>
+        </li>
+      </ul>
+    </div>
 
-  <textarea id="source">
-  </textarea>
+    <textarea id="source">
+    </textarea>
+
+  </div>
   
   <script>
     let app = new Vue({
@@ -26,7 +30,8 @@
         this.getPresentations()
       },
       data: {
-        markdownURLs: []
+        markdownURLs: [],
+        selectorVis: 'visible'
       },
       methods: {
         getPresentations: function() {
@@ -45,12 +50,8 @@
           .catch(error => console.error(error))
         }, 
         parseMarkdown: function(url) {
-          let fileURL = url
-          // let request = new XMLHttpRequest()
-          // request.open('GET', fileURL, true);
-          // request.send()
-
-          sessionStorage.setItem("presentation", fileURL)
+          this.selectorVis = 'hidden'
+          sessionStorage.setItem("presentation", url)
           let slideshow = remark.create({
             sourceUrl: sessionStorage.getItem("presentation")
           })
