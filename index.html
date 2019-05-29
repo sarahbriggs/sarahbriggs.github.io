@@ -49,7 +49,8 @@
         }, 
         parseMarkdown: function(url) {
           let result = ''
-          sessionStorage.setItem("presentation", url)
+          let fileURL = URL.createObjectURL(url)
+          sessionStorage.setItem("presentation", fileURL)
           let slideshow = remark.create({
             sourceUrl: sessionStorage.getItem("presentation")
           })
