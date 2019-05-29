@@ -3,6 +3,7 @@
 
 <head>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 </head>
 
 <body>
@@ -15,6 +16,9 @@
     </ul>
   </div>
 
+  <textarea id="source">
+  </textarea>
+  
   <script>
     let app = new Vue({
       el: '#app',
@@ -45,21 +49,9 @@
         }, 
         parseMarkdown: function(url) {
           let result = ''
-          console.log(url)
-          fetch(url)
-          .then(response => {
-            const reader = response.body.getReader()
-            reader.read().then(function processText({done, value}) {
-              console.log(value)
-              if(done) {
-                this.presentationContent = result 
-                console.log(this.presentationContent)
-                reader.cancel()
-                return 
-              }
-              result += value
-              return reader.read().then(processText) 
-            })
+          sessionStorage.setItem("presentation", url)
+          let slideshow = remark.create({
+            sourceUrl: sessionStorage.getItem("presentation")
           })
         }
       }
