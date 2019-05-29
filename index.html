@@ -49,7 +49,7 @@
         }, 
         parseMarkdown: function(url) {
           let result = ''
-          let fileURL = URL.createObjectURL(url)
+          let fileURL = url
           let source = ''
           let request = new XMLHttpRequest()
           request.open('GET', fileURL, true);
