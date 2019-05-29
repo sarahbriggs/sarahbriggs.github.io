@@ -19,10 +19,11 @@
         </li>
       </ul>
     </div>
-
-    <textarea id="source" :style="slideStyles" class="slides">
-    </textarea>
-    <button @click="makeFull" :style="fullButtonStyle" class="slides"><i class="fas fa-expand"></i></button>
+    <div>
+      <textarea id="source" :style="slideStyles">
+      </textarea>
+      <button @click="makeFull" :style="fullButtonStyle"><i class="fas fa-expand"></i></button>
+    </div>
   </div>
   
   <script>
@@ -42,7 +43,7 @@
         fullButtonStyle: {
           position: 'relative',
           top: '10px',
-          left: '10px'
+          left: '500px'
         }
       },
       methods: {
