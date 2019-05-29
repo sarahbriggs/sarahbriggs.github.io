@@ -9,7 +9,7 @@
 
 <body>
   <div id="app">
-    <div class="selector" :visibility='selectorVis' v-if="!selected">
+    <div class="selector" v-show="!selected">
       <h3>Select Presentation</h3>
       <ul>
         <li v-for="md in markdownURLs">
@@ -31,7 +31,6 @@
       },
       data: {
         markdownURLs: [],
-        selectorVis: 'visible',
         selected: false 
       },
       methods: {
