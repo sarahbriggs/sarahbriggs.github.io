@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h3>Select Presentation</h3>
+    <ul>
+      <li v-for="md in markdownURLs">
+        <a v-on:click="parseMarkdown(md[1])">{{ md[0] }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <textarea id="source">
+  </textarea>
+  
+  <script>
+    let app = new Vue({
+      el: '#app',
+      created: function() {
+        this.getPresentations()
+      },
+      data: {
+        markdownURLs: []
+      },
+      methods: {
+        getPresentations: function() {
+          fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
+          .then(response => 
+            response.json()
+            )
+          .then(data => {
+            data.forEach(element => {
+              if(element['name'].slice(-3) == '.md') {
+                let md = [element['name'], element['download_url']]
+                this.markdownURLs.push([element['name'], element['download_url']])
+              } 
+            })
+          })
+          .catch(error => console.error(error))
+        }, 
+        parseMarkdown: function(url) {
+          let fileURL = url
+          let request = new XMLHttpRequest()
+          request.open('GET', fileURL, true);
+          request.send()
+
+          sessionStorage.setItem("presentation", fileURL)
+          let slideshow = remark.create({
+            sourceUrl: sessionStorage.getItem("presentation")
+          })
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>
