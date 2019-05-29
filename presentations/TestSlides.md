@@ -7,7 +7,7 @@ This is a test section.
 
 This is also a test section.
 
-***
+---
 
 # Next Slide 
 ## Hello
