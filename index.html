@@ -36,10 +36,8 @@
             )
           .then(data => {
             data.forEach(element => {
-              console.log(element)
               if(element['name'].slice(-3) == '.md') {
                 let md = [element['name'], element['download_url']]
-                console.log(md)
                 this.markdownURLs.push([element['name'], element['download_url']])
               } 
             })
@@ -47,10 +45,7 @@
           .catch(error => console.error(error))
         }, 
         parseMarkdown: function(url) {
-          let result = ''
           let fileURL = url
-          console.log(fileURL)
-          let source = ''
           let request = new XMLHttpRequest()
           request.open('GET', fileURL, true);
           request.send()
