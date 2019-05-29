@@ -4,7 +4,9 @@
 <head>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,8 +20,10 @@
       </ul>
     </div>
 
-    <textarea id="source" style="display:none">
+    <textarea id="source" :style="slideStyles">
     </textarea>
+
+    <button @click="makeFull"><i class="fas fa-expand"></i></button>
   </div>
   
   <script>
@@ -30,7 +34,12 @@
       },
       data: {
         markdownURLs: [],
-        selected: false 
+        selected: false,
+        slideStyles: {
+          display: 'none',
+          padding-left: '200px',
+          padding-right: '200px'
+        }
       },
       methods: {
         getPresentations: function() {
@@ -55,6 +64,10 @@
           let slideshow = remark.create({
             sourceUrl: sessionStorage.getItem("presentation")
           })
+        },
+        makeFull: function() {
+          this.slideStyles['padding-right'] = '0px'
+          this.slideStyles['padding-left'] = '0px'
         }
       }
     })
@@ -62,4 +75,8 @@
 
 </body>
 </html>
+
+
+
+
 
