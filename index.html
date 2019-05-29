@@ -50,6 +50,20 @@
         parseMarkdown: function(url) {
           let result = ''
           let fileURL = URL.createObjectURL(url)
+          let source = ''
+          let request = new XMLHttpRequest()
+          request.open('GET', fileURL, true);
+          request.responseType = 'blob'
+          request.onload = function() {
+            console.log(request.response)
+            // let reader = new FileReader()
+            // reader.readAsDataURL(request.response)
+            // reader.onload =  function(e) {
+            //   console.log('DataURL:', e.target.result)
+            // }
+          }
+          request.send()
+
           sessionStorage.setItem("presentation", fileURL)
           let slideshow = remark.create({
             sourceUrl: sessionStorage.getItem("presentation")
