@@ -20,7 +20,7 @@
       </ul>
     </div>
     <div>
-      <textarea id="source" :style="slideStyles">
+      <textarea id="source" style="display: none">
       </textarea>
       <button @click="makeFull" :style="fullButtonStyle"><i class="fas fa-expand"></i></button>
     </div>
@@ -35,11 +35,6 @@
       data: {
         markdownURLs: [],
         selected: false,
-        slideStyles: {
-          display: 'none',
-          paddingLeft: '200px',
-          paddingRight: '200px'
-        },
         fullButtonStyle: {
           position: 'relative',
           top: '10px',
@@ -63,7 +58,6 @@
           .catch(error => console.error(error))
         }, 
         parseMarkdown: function(url) {
-          this.selectorVis = 'hidden'
           this.selected = true
           sessionStorage.setItem("presentation", url)
           let slideshow = remark.create({
@@ -71,8 +65,9 @@
           })
         },
         makeFull: function() {
-          this.slideStyles['padding-right'] = '0px'
-          this.slideStyles['padding-left'] = '0px'
+          // remark-slide-scaler sets the slide size 
+          // https://github.com/gnab/remark/wiki/Styling
+          // https://github.com/gnab/remark/blob/master/src/remark.less
         }
       }
     })
