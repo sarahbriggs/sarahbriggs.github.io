@@ -1,4 +1,17 @@
 
+* {
+	font-family: Arial;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+.selector {
+	padding-top: 100px;
+	position: center;
+}
+
 textarea {
 	
 }

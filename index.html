@@ -5,12 +5,13 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
   <link rel="stylesheet" href="styles.css">
+  
 </head>
 
 <body>
   <div id="app">
     <div class="selector" v-show="!selected">
-      <h3>Select Presentation</h3>
+      <h2>Select Presentation</h3>
       <ul>
         <li v-for="md in markdownURLs">
           <a v-on:click="parseMarkdown(md[1])">{{ md[0] }}</a>
@@ -18,9 +19,8 @@
       </ul>
     </div>
 
-    <textarea id="source">
+    <textarea id="source" v-show="selected">
     </textarea>
-
   </div>
   
   <script>
