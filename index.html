@@ -7,7 +7,12 @@
 
 <body>
   <div id="app">
-    {{ markdownURLs }}
+    <h3>Select Presentation</h3>
+    <ul>
+      <li v-for="md in markdownURLs">
+        <a v-on:click="parseMarkdown(md[1])">{{ md[0] }}</a>
+      </li>
+    </ul>
   </div>
 
   <script>
@@ -24,23 +29,31 @@
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
           .then(response => 
             response.json()
-          )
+            )
           .then(data => {
             data.forEach(element => {
               console.log(element)
               if(element['name'].slice(-3) == '.md') {
-                let md = [element['name'], element['url']]
+                let md = [element['name'], element['download_url']]
                 console.log(md)
                 this.markdownURLs.push([element['name'], element['url']])
               } 
             })
           })
           .catch(error => console.error(error))
+        }, 
+        parseMarkdown: function(url) {
+          console.log(url)
+          fetch(url)
+          .then(response => {
+            console.log(response)
+            const reader = response.body.getReader()
+          })
         }
       }
     })
-    </script>
+  </script>
 
-  </body>
-  </html>
+</body>
+</html>
 
