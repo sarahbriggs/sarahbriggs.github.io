@@ -9,7 +9,7 @@
 
 <body>
   <div id="app">
-    <div class="selector" :visibility='selectorVis'>
+    <div class="selector" :visibility='selectorVis' v-if="!selected">
       <h3>Select Presentation</h3>
       <ul>
         <li v-for="md in markdownURLs">
@@ -31,7 +31,8 @@
       },
       data: {
         markdownURLs: [],
-        selectorVis: 'visible'
+        selectorVis: 'visible',
+        selected: false 
       },
       methods: {
         getPresentations: function() {
@@ -51,6 +52,7 @@
         }, 
         parseMarkdown: function(url) {
           this.selectorVis = 'hidden'
+          this.selected = true
           sessionStorage.setItem("presentation", url)
           let slideshow = remark.create({
             sourceUrl: sessionStorage.getItem("presentation")
