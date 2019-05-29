@@ -6,30 +6,31 @@
 </head>
 
 <body>
-  <p>Check up to date againnnnnn ALMOST</p>
   <div id="app">
-    {{ repoContents }}
+    {{ markdownURLs }}
   </div>
 
   <script>
     let app = new Vue({
       el: '#app',
       created: function() {
-        console.log('test')
-        this.getRepoData()
+        this.getPresentations()
       },
       data: {
-        repoContents: null
+        markdownURLs: null
       },
       methods: {
-        getRepoData: function() {
+        getPresentations: function() {
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
           .then(response => 
             response.json()
           )
           .then(data => {
-            this.repoContents = data
-            console.log(this.repoContents)
+            data.forEach(element => {
+              if(element.slice(-3) == '.md') {
+                this.markdownURLs.push([element['name'], element['url']])
+              } 
+            })
           })
           .catch(error => console.error(error))
         }
