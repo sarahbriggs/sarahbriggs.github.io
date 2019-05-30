@@ -24,75 +24,105 @@ ul {
     padding-inline-end: 40%;
 }
 
-a, a > code {
-  color: rgb(249, 38, 114);
-  text-decoration: none;
+.remark-container {
+  background-color: black;
 }
-.footnote {
-  position: absolute;
-  bottom: 3em;
-  padding-right: 4em;
-  font-size: 90%;
-}
-.remark-code-line-highlighted     { background-color: #ffff88; }
 
-.inverse {
-  background-color: #272822;
-  color: #d6d6d6;
-  text-shadow: 0 0 20px #333;
+.remark-slide-content {
+  font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, arial, sans-serif;
 }
-.inverse h1, .inverse h2, .inverse h3 {
-  color: #f3f3f3;
+.remark-slide-content pre,
+.remark-slide-content code,
+.remark-slide-content kbd,
+.remark-slide-content tt,
+.remark-slide-content samp {
+  font-family: Monaco, "Lucida Sans Typewriter", "Lucida Console", "Andale Mono", "Consolas", monospace;
 }
-/* Two-column layout */
-.left-column {
-  color: #777;
-  width: 20%;
-  height: 92%;
-  float: left;
+.remark-slide-content h1,
+.remark-slide-content h2,
+.remark-slide-content h3 {
+  font-family: Quattrocento, "Goudy Old Style", "Big Caslon", Palatino, serif;
+  font-weight: bold;
 }
-.left-column h2:last-of-type, .left-column h3:last-child {
-  color: #000;
+.remark-slide-content table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  overflow: auto;
 }
-.right-column {
-  width: 75%;
-  float: right;
-  padding-top: 1em;
+.remark-slide-content table tr:nth-child(2n) {
+  background-color: #f6f8fa;
 }
-.pull-left {
-  float: left;
-  width: 47%;
+.remark-slide-content table th,
+.remark-slide-content table td {
+  display: table-cell;
+  vertical-align: inherit;
+  padding: 0.15em 0.3em;
+  border: 1px solid #dfe2e5;
 }
-.pull-right {
-  float: right;
-  width: 47%;
+.remark-slide-content table th {
+  font-weight: bold;
 }
-.pull-right ~ * {
-  clear: both;
+.remark-slide-content pre {
+  overflow: auto;
 }
-img, video, iframe {
-  max-width: 100%;
+.remark-slide-content pre > code {
+  border-radius: 0.4em;
+  padding: 0.5em;
+  background-color: #f6f8fa;
 }
-blockquote {
-  border-left: solid 5px lightgray;
-  padding-left: 1em;
+.remark-slide-content p > code,
+.remark-slide-content li > code,
+.remark-slide-content a > code {
+  background-color: #f6f8fa;
+  margin: 0;
+  border-radius: 0.2em;
+  padding: 0.15em 0.25em;
 }
-.remark-slide table {
-  margin: auto;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
+.remark-slide-content blockquote {
+  margin: 0;
+  padding: 0 0.5em;
+  color: #6a737d;
+  border-left: 0.125em solid #dfe2e5;
 }
-.remark-slide table thead th { border-bottom: 1px solid #ddd; }
-th, td { padding: 5px; }
-.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) { background: #eee }
-
-@page { margin: 0; }
+.remark-slide-content .remark-slide-number,
+.remark-slide-content .footer li {
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+}
+.remark-slide-content.smokescreen > h1,
+.remark-slide-content img[src~=smokescreen] {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.remark-slide-content.smokescreen > h1,
+.remark-slide-content.smokescreen > h2,
+.remark-slide-content.smokescreen > h3 {
+  color: white;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8), 8px 8px 20px rgba(0, 0, 0, 0.9);
+}
 @media print {
-  .remark-slide-scaler {
-    width: 100% !important;
-    height: 100% !important;
-    transform: scale(1) !important;
-    top: 0 !important;
-    left: 0 !important;
+  .remark-slide-content.smokescreen {
+    -webkit-print-color-adjust: exact;
+    -webkit-filter: opacity(1);
   }
+}
+.remark-slide-content.fogscreen > h1 {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.remark-slide-content.fogscreen > h1,
+.remark-slide-content.fogscreen > h2,
+.remark-slide-content.fogscreen > h3 {
+  color: black;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5), 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+@media print {
+  .remark-slide-content.fogscreen {
+    -webkit-print-color-adjust: exact;
+    -webkit-filter: opacity(1);
+  }
+}
+.remark-slide-content.fit-h1 h1 {
+  height: 1.25em;
+  overflow: hidden;
 }
