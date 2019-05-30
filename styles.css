@@ -20,6 +20,6 @@ h1, h2 {
 ul {
 	font-size: x-large;
 	list-style-position: outside; 
-	width: 200px;
 	padding-inline-start: 40%;
+    padding-inline-end: 40%;
 }
