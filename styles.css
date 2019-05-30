@@ -8,8 +8,11 @@ h1, h2 {
 }
 
 .selector {
+	display: flex;
 	padding-top: 50px;
+	align-self: center;
 	align-items: center;
+	align-content: center;
     justify-content: center;
 	width: 300px;
 }
