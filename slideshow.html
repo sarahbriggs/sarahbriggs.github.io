@@ -28,7 +28,6 @@
       },
       methods: {
         renderMarkdown: function() {
-          sessionStorage.setItem("selected", true)
           let slideshow = remark.create({
             sourceUrl: sessionStorage.getItem("presentation")
           })

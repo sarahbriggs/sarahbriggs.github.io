@@ -11,7 +11,7 @@
 
 <body>
   <div id="app">
-    <div class="selector" v-show="!sessionStorage.getItem('selected')">
+    <div class="selector">
       <h2>Select Presentation</h2>
       <ul>
         <li v-for="md in markdownURLs">
@@ -28,11 +28,10 @@
         this.getPresentations()
       },
       data: {
-        markdownURLs: []
+        markdownURLs: [] 
       },
       methods: {
         getPresentations: function() {
-          sessionStorage.setItem("selected", false)
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
           .then(response => 
             response.json()
