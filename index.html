@@ -11,17 +11,14 @@
 
 <body>
   <div id="app">
-    <div class="selector" v-show="!selected">
+    <div class="selector" v-show="!sessionStorage.getItem('selected')">
       <h2>Select Presentation</h2>
       <ul>
         <li v-for="md in markdownURLs">
-          <a v-on:click="parseMarkdown(md[1])">{{ md[0] }}</a>
+          <a v-on:click="selectSlides(md[1])">{{ md[0] }}</a>
         </li>
       </ul>
     </div>
-    <textarea id="source" style="display: none">
-    </textarea>
-    <button :style="backButton" v-show="selected" v-on:click="returnToSelect"><i class="fas fa-undo"></i></button>
   </div>
   
   <script>
@@ -31,18 +28,11 @@
         this.getPresentations()
       },
       data: {
-        markdownURLs: [],
-        selected: false,
-        backButton: {
-          top: '10px',
-          position: 'absolute',
-          left: '20px',
-          border: 'none',
-          padding: '10px'
-        },
+        markdownURLs: []
       },
       methods: {
         getPresentations: function() {
+          sessionStorage.setItem("selected", false)
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
           .then(response => 
             response.json()
@@ -56,18 +46,10 @@
             })
           })
           .catch(error => console.error(error))
-        }, 
-        parseMarkdown: function(url) {
-          this.selected = true
-          sessionStorage.setItem("presentation", url)
-          let slideshow = remark.create({
-            sourceUrl: sessionStorage.getItem("presentation")
-          })
         },
-        returnToSelect: function() {
-          console.log('test')
-          this.selected = false
-          console.log(this.selected)
+        selectSlides: function(url) {
+          sessionStorage.setItem("presentation", url)
+          window.location = "slideshow.html"
         }
       }
     })
