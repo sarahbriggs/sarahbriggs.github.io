@@ -9,6 +9,8 @@ h1, h2 {
 
 .selector {
 	padding-top: 50px;
+	padding-left: 150px;
+	padding-right: 150px;
 	align-self: center;
 	align-items: center;
 	align-content: center;
