@@ -18,5 +18,5 @@ h1, h2 {
 ul {
 	font-size: x-large;
 	list-style-position: outside; 
-	text-align: center;
+	width: 200px;
 }
