@@ -9,4 +9,5 @@ This is also a test section.
 # Next Slide 
 ## testing
 
-This is a test of having two presentations. 
+This is an example of a Github file [link](https://github.com/sarahbriggs/sarahbriggs.github.io/blob/master/codeExample.java)
+This is an example of a Github code [snippet](https://github.com/sarahbriggs/sarahbriggs.github.io/blob/b847ed8a157a286ea1fb2ec378693636a25db2e7/codeExample.java#L7-L18)
