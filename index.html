@@ -11,7 +11,7 @@
 
 <body>
   <div id="app" class="selector">  
-    <h1>Select Presentation:</h1>
+    <h1>Select Presentation</h1>
     <ul>
       <li v-for="md in markdownURLs">
         <a v-on:click="selectSlides(md[1])">{{ md[0].slice(0, -3) }}</a>
