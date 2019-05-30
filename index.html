@@ -30,6 +30,7 @@
       },
       methods: {
         getPresentations: function() {
+          console.log('updated')
           fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
           .then(response => 
             response.json()
@@ -47,7 +48,6 @@
         selectSlides: function(url) {
           sessionStorage.setItem("presentation", url)
           window.location = "slideshow.html"
-          console.log('up to date')
         }
       }
     })
