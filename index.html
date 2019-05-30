@@ -31,7 +31,12 @@
       methods: {
         getPresentations: function() {
           console.log('updated again')
-          fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
+          //fetch('https://api.github.com/repos/sarahbriggs/sarahbriggs.github.io/contents/presentations')
+          fetch('https://api.github.com/repos/sarahbriggs/md-slides/contents/presentations', {
+            headers: {
+              Authorization: 'token 123abcTest'
+            }
+          })
           .then(response => 
             response.json()
             )
