@@ -17,6 +17,6 @@ h1, h2 {
 
 ul {
 	font-size: x-large;
-	list-style: inside; 
+	list-style-position: outside; 
 	text-align: center;
 }
