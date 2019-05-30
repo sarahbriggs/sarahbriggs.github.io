@@ -19,11 +19,9 @@
         </li>
       </ul>
     </div>
-    <div>
-      <textarea id="source" style="display: none">
-      </textarea>
-      <button @click="makeFull" :style="fullButtonStyle"><i class="fas fa-expand"></i></button>
-    </div>
+    <textarea id="source" style="display: none">
+    </textarea>
+    <button :style="backButton" v-show="selected" v-on:click="returnToSelect"><i class="fas fa-undo"></i></button>
   </div>
   
   <script>
@@ -35,11 +33,11 @@
       data: {
         markdownURLs: [],
         selected: false,
-        fullButtonStyle: {
-          position: 'relative',
-          top: '10px',
-          left: '500px'
-        }
+        backButton: {
+          top: '10px';
+          position: absolute;
+          left: '20px';
+        },
       },
       methods: {
         getPresentations: function() {
@@ -64,15 +62,13 @@
             sourceUrl: sessionStorage.getItem("presentation")
           })
         },
-        makeFull: function() {
-          // remark-slide-scaler sets the slide size 
-          // https://github.com/gnab/remark/wiki/Styling
-          // https://github.com/gnab/remark/blob/master/src/remark.less
+        returnToSelect: function() {
+          this.selected = false
+          console.log(this.selected)
         }
       }
     })
   </script>
-
 </body>
 </html>
 
