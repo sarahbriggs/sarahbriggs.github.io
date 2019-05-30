@@ -8,16 +8,15 @@ h1, h2 {
 }
 
 .selector {
-	display: flex;
 	padding-top: 50px;
 	align-self: center;
 	align-items: center;
 	align-content: center;
     justify-content: center;
-	width: 300px;
 }
 
 ul {
 	font-size: x-large;
 	list-style: inside; 
+	text-align: center;
 }
