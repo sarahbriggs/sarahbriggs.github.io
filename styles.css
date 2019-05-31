@@ -1,5 +1,14 @@
 @import url(//db.onlinewebfonts.com/c/ba05de4b4767452bff18bfa18e1a11c1?family=Handset+Sans);
+@import url(//db.onlinewebfonts.com/c/985a59988b7aa29ca8181d73d0dbb72d?family=AdonideW01-Light);
 
+@font-face {font-family: "AdonideW01-Light";
+    src: url("//db.onlinewebfonts.com/t/985a59988b7aa29ca8181d73d0dbb72d.eot");
+    src: url("//db.onlinewebfonts.com/t/985a59988b7aa29ca8181d73d0dbb72d.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/985a59988b7aa29ca8181d73d0dbb72d.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/985a59988b7aa29ca8181d73d0dbb72d.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/985a59988b7aa29ca8181d73d0dbb72d.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/985a59988b7aa29ca8181d73d0dbb72d.svg#AdonideW01-Light") format("svg");
+}
 @font-face {font-family: "Handset Sans";
     src: url("//db.onlinewebfonts.com/t/7600b21a52074314d1f6170b4b828955.eot");
     src: url("//db.onlinewebfonts.com/t/7600b21a52074314d1f6170b4b828955.eot?#iefix") format("embedded-opentype"),
@@ -17,7 +26,7 @@
 	align-items: center;
 	align-content: center;
     justify-content: center;
-    font-family: "Handset Sans";
+    font-family: Handset Sans;
     text-align: center;
 }
 
@@ -34,12 +43,13 @@
 }
 
 .remark-slide-content {
-  font-family: Handset Sans;
+  font-family: AdonideW01-Light;
 }
 .remark-slide-content h1,
 .remark-slide-content h2,
 .remark-slide-content h3 {
   font-weight: bold;
+  font-family: Handset Sans;
 }
 .remark-slide-content table {
   border-spacing: 0;
