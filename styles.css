@@ -1,3 +1,14 @@
+@import url(//db.onlinewebfonts.com/c/ba05de4b4767452bff18bfa18e1a11c1?family=Handset+Sans);
+
+@font-face {font-family: "Handset Sans";
+    src: url("//db.onlinewebfonts.com/t/7600b21a52074314d1f6170b4b828955.eot");
+    src: url("//db.onlinewebfonts.com/t/7600b21a52074314d1f6170b4b828955.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/7600b21a52074314d1f6170b4b828955.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/7600b21a52074314d1f6170b4b828955.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/7600b21a52074314d1f6170b4b828955.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/7600b21a52074314d1f6170b4b828955.svg#Handset Sans") format("svg");
+}
+
 .selector {
 	padding-top: 50px;
 	padding-left: 150px;
@@ -6,7 +17,7 @@
 	align-items: center;
 	align-content: center;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Handset Sans";
     text-align: center;
 }
 
@@ -23,7 +34,7 @@
 }
 
 .remark-slide-content {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Handset Sans;
 }
 .remark-slide-content h1,
 .remark-slide-content h2,
