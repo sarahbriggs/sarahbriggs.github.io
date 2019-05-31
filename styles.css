@@ -44,7 +44,7 @@
 
 .remark-slide-content {
   font-family: AdonideW01-Light;
-  background-color: #b2b8b8;
+  background-color: #EBEDED;
 }
 .remark-slide-content h1,
 .remark-slide-content h2,
@@ -63,14 +63,14 @@
 	padding: 10px;
 }
 .remark-slide-content table tr:nth-child(2n) {
-  background-color: #f6f8fa;
+  background-color: white;
 }
 .remark-slide-content table th,
 .remark-slide-content table td {
   display: table-cell;
   vertical-align: inherit;
   padding: 10px;
-  border: 1px solid #dfe2e5;
+  border: 1px solid black;
 }
 .remark-slide-content table th {
   font-weight: bold;
@@ -99,6 +99,6 @@
 }
 .remark-slide-content .remark-slide-number,
 .remark-slide-content .footer li {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #EBEDED;
   opacity: 1.0;
 }
