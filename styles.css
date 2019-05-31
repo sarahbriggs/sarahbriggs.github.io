@@ -44,6 +44,7 @@
 
 .remark-slide-content {
   font-family: AdonideW01-Light;
+  background-color: #b2b8b8;
 }
 .remark-slide-content h1,
 .remark-slide-content h2,
@@ -58,6 +59,9 @@
   width: 100%;
   overflow: auto;
 }
+.remark-slide-content ul {
+	padding: 10px;
+}
 .remark-slide-content table tr:nth-child(2n) {
   background-color: #f6f8fa;
 }
@@ -65,9 +69,8 @@
 .remark-slide-content table td {
   display: table-cell;
   vertical-align: inherit;
-  padding: 0.15em 0.3em;
+  padding: 10px;
   border: 1px solid #dfe2e5;
-
 }
 .remark-slide-content table th {
   font-weight: bold;
