@@ -15,6 +15,7 @@
 	list-style-position: outside; 
 	padding-inline-start: 40%;
     padding-inline-end: 40%;
+    text-align: left;
 }
 
 .remark-container {
